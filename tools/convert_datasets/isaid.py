@@ -132,7 +132,7 @@ def slide_crop_label(src_path, out_dir, mode, patch_H, patch_W, overlap):
                 y_end = img_H
 
             lab_patch = label[y_str:y_end, x_str:x_end]
-            lab_patch = Image.fromarray(lab_patch.astype(np.uint8), mode='P')
+            lab_patch = Image.fromarray(lab_patch.astype(np.uint8), mode='L')
 
             image = osp.basename(src_path).split('.')[0].split(
                 '_')[0] + '_' + str(y_str) + '_' + str(y_end) + '_' + str(
