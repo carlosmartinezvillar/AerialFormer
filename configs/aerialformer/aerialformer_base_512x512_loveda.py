@@ -21,7 +21,7 @@ model = dict(
 
 # data = dict(samples_per_gpu=4, workers_per_gpu=4) # 2 GPUs x 4 samples/gpu = 8 batch size
 # data = dict(samples_per_gpu=8, workers_per_gpu=8) #<---- 1 GPU
-data = dict(samples_per_gpu=2, workers_per_gpu=2)
+data = dict(samples_per_gpu=8, workers_per_gpu=8)
 
 # Activete the following lines to create the results for the test set
 # data = dict(
