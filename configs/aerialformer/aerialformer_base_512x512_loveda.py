@@ -1,6 +1,8 @@
 _base_ = ['./aerialformer_tiny_512x512_loveda.py']
 checkpoint_file = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/swin/swin_base_patch4_window12_384_22k_20220317-e5c09f74.pth'  # noqa
 # decoder_norm_cfg = dict(type='SyncBN', requires_grad=True)
+decoder_norm_cfg = dict(type='BN', requires_grad=True)
+
 
 model = dict(
     backbone=dict(
