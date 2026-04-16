@@ -8,7 +8,8 @@ checkpoint_file = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/s
 
 model = dict(
     backbone=dict(
-        init_cfg=dict(type='Pretrained', checkpoint=checkpoint_file)),
+        init_cfg=dict(type='Pretrained', checkpoint=checkpoint_file)
+    ),
     test_cfg=dict(mode='slide', crop_size=(512, 512), stride=(64, 64)))
 
 # optimizer
@@ -36,10 +37,8 @@ lr_config = dict(
     by_epoch=False)
 
 
-# data = dict(samples_per_gpu=1, workers_per_gpu=1) # 1 GPU x 8 samples/gpu = 8 batch size
 # runner = dict(type='IterBasedRunner', max_iters=800000)
 # checkpoint_config = dict(by_epoch=False, interval=50)
-
 data = dict(samples_per_gpu=8, workers_per_gpu=8) # 1 GPU x 8 samples/gpu = 8 batch size
 
 # Activete the following lines to create the results for the test set

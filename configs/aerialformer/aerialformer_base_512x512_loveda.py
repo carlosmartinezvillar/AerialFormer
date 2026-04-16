@@ -1,6 +1,6 @@
 _base_ = ['./aerialformer_tiny_512x512_loveda.py']
 checkpoint_file = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/swin/swin_base_patch4_window12_384_22k_20220317-e5c09f74.pth'  # noqa
-decoder_norm_cfg = dict(type='SyncBN', requires_grad=True)
+# decoder_norm_cfg = dict(type='SyncBN', requires_grad=True)
 
 model = dict(
     backbone=dict(
@@ -27,5 +27,5 @@ data = dict(samples_per_gpu=8, workers_per_gpu=4) #<--- 1 GPU
 #         img_dir='img_dir/test',
 #         ann_dir='ann_dir/NA'))
 
-optimizer_config = dict(grad_clip=dict(max_norm=0.35, norm_type=2))
-fp16 = dict(loss_scale='dynamic')
+# optimizer_config = dict(grad_clip=dict(max_norm=0.35, norm_type=2))
+# fp16 = dict(loss_scale='dynamic')
