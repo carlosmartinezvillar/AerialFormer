@@ -19,6 +19,7 @@ model = dict(
     )
 )
 
-# data = dict(samples_per_gpu=4, workers_per_gpu=4) # 2 GPUs x 4 samples/gpu = 8 batch size
-data = dict(samples_per_gpu=8, workers_per_gpu=4) #<---- 1GPU
-# data = dict(samples_per_gpu=2, workers_per_gpu=2)
+data = dict(samples_per_gpu=8, workers_per_gpu=4) #<---- 1GPU, change at cli call
+
+optimizer_config = dict(grad_clip=dict(max_norm=0.35, norm_type=2))
+fp16 = dict(loss_scale='dynamic')

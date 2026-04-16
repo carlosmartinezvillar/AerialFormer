@@ -40,4 +40,3 @@ data = dict(samples_per_gpu=8, workers_per_gpu=8) # 1 GPU x 8 samples/gpu = 8 ba
 runner = dict(type='IterBasedRunner', max_iters=800000)
 evaluation = dict(interval=15000, pre_eval=True, metric='mIoU', save_best='mIoU')
 checkpoint_config = dict(by_epoch=False, interval=15000)
-# fp16 = dict(loss_scale='dynamic')
